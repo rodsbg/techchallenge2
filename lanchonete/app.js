@@ -4,17 +4,6 @@ const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require("swagger-jsdoc");
 
-const ClienteService = require('./application/services/ClienteService');
-const ClienteRepository = require('./interfaces/repositories/ClienteRepository');
-const ClienteController = require('./interfaces/controllers/ClienteController');
-const CampanhaService = require('./application/services/CampanhaService');
-const ProdutoRoute = require('./application/routes/ProdutoRoute');
-const clienteRoute = require('./application/routes/ClienteRoute');
-const campanhaRoute = require('./application/routes/CampanhaRoute');
-const pedidoRoute = require('./application/routes/PedidoRoute');
-const pagamentoRoute = require('./application/routes/FakecheckoutRoute');
-
-
 // Swagger configuration options
 const options = {
   definition: {
@@ -25,7 +14,7 @@ const options = {
       description: "A sample API using Swagger and Express",
     },
   },
-  apis: ["./application/routes/*.js"], // Path to the API routes
+  apis: ["./rotas/*.js"], // Path to the API routes
 };
 
 const specs = swaggerJsdoc(options);
