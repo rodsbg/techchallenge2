@@ -1,6 +1,6 @@
 // src/routes/produtoRoutes.js
 const express = require('express');
-const ProdutoController = require('../../interfaces/controllers/ProdutoController');
+const ProdutoUseCase = require('../../casosdeuso/ProdutoUseCase');
 
 const router = express.Router();
 
@@ -120,9 +120,9 @@ const router = express.Router();
 
 
 
-router.post('/produtos', ProdutoController.criarProduto);
-router.put('/produtos', ProdutoController.editarProduto);
-router.delete('/produtos/:codigo', ProdutoController.removerProduto);
-router.get('/produtos/categoria/:categoria', ProdutoController.buscarProdutosPorCategoria);
+router.post('/produtos', ProdutoUseCase.criarProduto);
+router.put('/produtos', ProdutoUseCase.editarProduto);
+router.delete('/produtos/:codigo', ProdutoUseCase.removerProduto);
+router.get('/produtos/categoria/:categoria', ProdutoUseCase.buscarProdutosPorCategoria);
 
 module.exports = router;

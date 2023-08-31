@@ -1,5 +1,5 @@
 const express = require('express');
-const pedidoController = require('../../interfaces/controllers/PedidoController');
+const pedidoUseCase = require('../../casosdeuso/PedidoUseCase');
 const router = express.Router();
 
 /**
@@ -76,8 +76,8 @@ const router = express.Router();
  *       200:
  *         description: Listagem ok
 */ 
-router.post('/pedido', pedidoController.criarPedido);
-router.get('/pedido', pedidoController.listarPedidos);
-router.get('/pedido/:cpf', pedidoController.buscarpedidosporcpfPedidos);
+router.post('/pedido', pedidoUseCase.criarPedido);
+router.get('/pedido', pedidoUseCase.listarPedidos);
+router.get('/pedido/:cpf', pedidoUseCase.buscarpedidosporcpfPedidos);
 
 module.exports = router;

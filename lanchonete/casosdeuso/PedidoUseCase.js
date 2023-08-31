@@ -1,10 +1,10 @@
-const pedidoService = require('../interfaces/controladores/PedidoController');
+const pedidoController = require('../interfaces/controladores/PedidoController');
 
 
 const criarPedido = async (req, res) => {
   try {
 
-    const pedido = await pedidoService.cadastrarPedido(req.body);
+    const pedido = await pedidoController.cadastrarPedido(req.body);
 
     //inicia o fake checkout
        
@@ -17,7 +17,7 @@ const criarPedido = async (req, res) => {
 const listarPedidos = async(req,res) => {
   try {
     
-    const pedido = await pedidoService.listarPedidos();
+    const pedido = await pedidoController.listarPedidos();
 
     if (!pedido) {
       res.status(404).json({ error: 'Nenhum Pedido Cadastrado' });

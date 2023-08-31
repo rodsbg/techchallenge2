@@ -1,5 +1,5 @@
 const express = require('express');
-const pagamentoController = require('../../interfaces/controllers/PagamentoController');
+const pagamentoUseCase = require('../../casosdeuso/PagamentoUseCase');
 const router = express.Router();
 
 /**
@@ -13,6 +13,6 @@ const router = express.Router();
  *         description: Listagem dos pagamentos
 */ 
 
-router.get('/consultapagamentos', pagamentoController.listarPagamentos);
+router.get('/consultapagamentos', pagamentoUseCase.listarPagamentos);
 
 module.exports = router;

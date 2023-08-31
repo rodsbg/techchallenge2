@@ -1,10 +1,10 @@
 // src/app/controllers/produtoController.js
-const produtoService = require('../interfaces/controladores/ProdutoController');
+const produtoController = require('../interfaces/controladores/ProdutoController');
 
 const criarProduto = async (req, res) => {
   try {
     
-    const produto = await produtoService.criarProduto(req.body);
+    const produto = await produtoController.criarProduto(req.body);
     res.status(201).json(produto); 
     
   } catch (error) {
@@ -15,7 +15,7 @@ const criarProduto = async (req, res) => {
 const editarProduto = async (req, res) => {
   try {
     // console.log(codigo, "   " ,req.body, "Controller")
-    const produto = await produtoService.editarProduto(req.body);
+    const produto = await produtoController.editarProduto(req.body);
     res.json(produto);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -27,7 +27,7 @@ const removerProduto = async (req, res) => {
     const  cod  = req.params;
     const codigo = JSON.stringify(cod);
   //  console.log(codigo, "   ", "Controller")
-    await produtoService.removerProduto(codigo);
+    await produtoController.removerProduto(codigo);
     res.sendStatus(204);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -37,7 +37,7 @@ const removerProduto = async (req, res) => {
 const buscarProdutosPorCategoria = async (req, res) => {
   try {
     const { categoria } = req.params;
-    const produtos = await produtoService.buscarProdutosPorCategoria(categoria);
+    const produtos = await produtoController.buscarProdutosPorCategoria(categoria);
     res.json(produtos);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -47,7 +47,7 @@ const buscarProdutosPorCategoria = async (req, res) => {
 const buscarprodutoporcodigo = async (req, res) => {
   try {
     const { codigo } = req.params;
-    const pedidos = await produtoService.buscarprodutoporcodigo(codigo);
+    const pedidos = await produtoController.buscarprodutoporcodigo(codigo);
     res.json(pedidos);
   } catch (error) {
     res.status(500).json({ error: error.message });

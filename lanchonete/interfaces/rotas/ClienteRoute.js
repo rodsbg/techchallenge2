@@ -1,6 +1,6 @@
 const express = require('express');
-const clienteService = require('../../application/services/ClienteService');
-const clienteController = require('../../interfaces/controllers/ClienteController');
+const clienteController = require('../controladores/ClienteController');
+const clienteUseCase = require('../../casosdeuso/ClienteUseCase');
 const router = express.Router();
 
 
@@ -67,7 +67,7 @@ const router = express.Router();
 router.post('/clientes', async (req, res) => {
   try {
     const { nome, cpf, email } = req.body;
-    const cliente = await clienteService.cadastrarCliente(req.body);
+    const cliente = await clienteController.cadastrarCliente(req.body);
     res.json(cliente);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -77,7 +77,7 @@ router.post('/clientes', async (req, res) => {
 
 router.get('/clientes', async (req, res) => {
   try {
-    const cliente = await clienteService.listarClientes();
+    const cliente = await clienteController.listarClientes();
 
     res.json(cliente);
   } catch (error) {
@@ -88,7 +88,7 @@ router.get('/clientes', async (req, res) => {
 router.get('/clientes/:cpf', async (req, res) => {
   try {
     const { cpf } = req.params;
-    const cliente = await clienteService.buscarClientePorCpf(cpf);
+    const cliente = await clienteController.buscarClientePorCpf(cpf);
     res.json(cliente);
   } catch (error) {
     res.status(500).json({ error: 'Erro ao consultar cpf.' });

@@ -1,7 +1,7 @@
-const clienteService = require('../interfaces/controladores/ClienteController');
+const clienteController = require('../interfaces/controladores/ClienteController');
 class clienteController {
-    constructor(clienteService,campanhaService) {
-      this.clienteService = clienteService;
+    constructor(clienteController,campanhaService) {
+      this.clienteController = clienteController;
       this.campanhaService = campanhaService;
     }
   
@@ -9,7 +9,7 @@ class clienteController {
       const { nome, email, cpf } = req.body;
   
       try {
-        const cliente = await clienteService.cadastrarCliente(nome, email, cpf);
+        const cliente = await clienteController.cadastrarCliente(nome, email, cpf);
         res.status(201).json(cliente);
       } catch (error) {
         res.status(400).json({ error: error.message });
@@ -19,7 +19,7 @@ class clienteController {
         const { cpf } = req.params;
         try {
           
-          const cliente = await clienteService.buscarClientePorCpf(cpf);
+          const cliente = await clienteController.buscarClientePorCpf(cpf);
           
           if (!cliente) {
             res.status(404).json({ error: 'Cliente não encontrado' });
@@ -32,7 +32,7 @@ class clienteController {
       }
       async listarClientes() {
         try {
-          const cliente = await clienteService.listarClientes();
+          const cliente = await clienteController.listarClientes();
     
           if (!cliente) {
             res.status(404).json({ error: 'Nenhum Cliente cadastrado' });

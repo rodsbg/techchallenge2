@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const swagger = require('../framework/swagger/swagger');
+const swagger = require('../interfaces/swagger');
 
 // Configurar a conexão com o MongoDB
 mongoose.connect('mongodb://database:27017/techchallengelanchonete', {
@@ -21,11 +21,12 @@ app.use(bodyParser.json());
 
 // Rota para cadastrar um cliente
 
-const produtorota = require('../rotas/produtorota');
-const clienterota = require('../rotas/clienterota');
-const campanharota = require('./rotas/campanharota');
-const pedidorota = require('../rotas/pedidorota');
-const pagamentorota = require('../rotas/pagamentorota');
+const campanharota = require('../interfaces/rotas/CampanhaRoute');
+const produtorota = require('../interfaces/rotas/ProdutoRoute');
+const clienterota = require('../interfaces/rotas/ClienteRoute');
+const pedidorota = require('../interfaces/rotas/PedidoRoute');
+
+const pagamentorota = require('../interfaces/rotas/PagamentoRoute');
 
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));

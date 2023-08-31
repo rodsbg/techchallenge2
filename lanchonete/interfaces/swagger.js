@@ -1,5 +1,6 @@
-
-const swaggerJSDoc = require('swagger-jsdoc');
+const express = require('express');
+const bodyParser = require('body-parser');
+const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
 const options = {
@@ -10,7 +11,7 @@ const options = {
       version: '2.0.0',
     },
   },
-  apis: ['../routas/*.js'], // Caminho para as definições das rotas
+  apis: ['./rotas/*.js'], // Caminho para as definições das rotas
 };
 
 const swaggerSpec = swaggerJSDoc(options);

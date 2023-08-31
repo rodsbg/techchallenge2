@@ -1,9 +1,9 @@
-const pagamentoService = require('../interfaces/controladores/PagamentoController');
+const pagamentoController = require('../interfaces/controladores/PagamentoController');
 
 const listarPagamentos = async(req,res) => {
   try {
     
-    const pagamento = await pagamentoService.listarPagamentos();
+    const pagamento = await pagamentoController.listarPagamentos();
 
     if (!pagamento) {
       res.status(404).json({ error: 'Nenhum Pagamento realizado' });

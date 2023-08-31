@@ -1,6 +1,6 @@
 const express = require('express');
-const campanhaService = require('../../application/services/CampanhaService');
-const campanhaController = require('../../interfaces/controllers/CampanhaController');
+const campanhaController = require('../controladores/CampanhaController');
+const campanhaUseCase = require('../../casosdeuso/CampanhaUseCase');
 const router = express.Router();
 
 
@@ -45,11 +45,11 @@ const router = express.Router();
 */ 
 
 
-router.put('/campanha/:cpf', campanhaController.criarCampanha);
+router.put('/campanha/:cpf', campanhaUseCase.criarCampanha);
 
 router.get('/campanha', async (req, res) => {
     try {
-      const campanha = await campanhaService.listarCampanhas();
+      const campanha = await campanhaController.listarCampanhas();
       
       res.json(campanha);
     } catch (error) {
