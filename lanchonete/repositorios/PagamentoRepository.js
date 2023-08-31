@@ -1,4 +1,4 @@
-const Pagamento = require('../entidades/pagamento');
+const Pagamento = require('../entidades/Pagamento');
 
 const criarPagamento = async (PedidoData) => {
   try {

@@ -1,4 +1,4 @@
-const clienteService = require('../../application/services/ClienteService');
+const clienteService = require('../interfaces/controladores/ClienteController');
 class clienteController {
     constructor(clienteService,campanhaService) {
       this.clienteService = clienteService;

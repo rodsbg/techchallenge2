@@ -1,6 +1,6 @@
 // src/routes/produtoRoutes.js
 const express = require('express');
-const ProdutoController = require('../controladores/produtocontrolador');
+const ProdutoController = require('../../interfaces/controllers/ProdutoController');
 
 const router = express.Router();
 

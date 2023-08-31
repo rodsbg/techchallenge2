@@ -1,11 +1,11 @@
 // src/app/controllers/produtoController.js
-const produtoService = require('../../application/services/ProdutoService');
+const produtoService = require('../interfaces/controladores/ProdutoController');
 
 const criarProduto = async (req, res) => {
   try {
     
     const produto = await produtoService.criarProduto(req.body);
-    res.status(201).json(produto);
+    res.status(201).json(produto); 
     
   } catch (error) {
     res.status(500).json({ error: error.message });

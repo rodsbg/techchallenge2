@@ -1,4 +1,4 @@
-const Campanha = require('../entidades/campanha');
+const Campanha = require('../entidades/Campanha');
 
 const criarCampanha = async (CampanhaData) => {
   try {

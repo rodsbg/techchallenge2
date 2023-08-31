@@ -1,5 +1,5 @@
 const express = require('express');
-const pagamentoController = require('../controladores/pagamentocontrolador');
+const pagamentoController = require('../../interfaces/controllers/PagamentoController');
 const router = express.Router();
 
 /**

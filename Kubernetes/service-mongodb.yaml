@@ -8,3 +8,8 @@ spec:
   clusterIP: None
   selector:
     app: database
+  ports:
+  - name: mongodb
+    port: 27017
+    protocol: TCP
+    targetPort: mongodb

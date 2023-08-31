@@ -1,5 +1,5 @@
 // src/app/repositories/produtoRepository.js
-const Produto = require('../entidades/produto');
+const Produto = require('../entidades/Produto');
 
 const criarProduto = async (produtoData) => {
   try {

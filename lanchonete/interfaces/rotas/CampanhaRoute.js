@@ -1,6 +1,6 @@
 const express = require('express');
 const campanhaService = require('../../application/services/CampanhaService');
-const campanhaController = require('../controladores/campanhacontrolador');
+const campanhaController = require('../../interfaces/controllers/CampanhaController');
 const router = express.Router();
 
 

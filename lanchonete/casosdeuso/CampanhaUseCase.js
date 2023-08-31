@@ -1,4 +1,4 @@
-const campanhaService = require('../../application/services/CampanhaService');
+const campanhaService = require('../interfaces/controladores/CampanhaController');
 
 const criarCampanha = async (req, res) => {
   try {

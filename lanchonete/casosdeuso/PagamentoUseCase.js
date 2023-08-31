@@ -1,4 +1,4 @@
-const pagamentoService = require('../../application/services/PagamentoService');
+const pagamentoService = require('../interfaces/controladores/PagamentoController');
 
 const listarPagamentos = async(req,res) => {
   try {

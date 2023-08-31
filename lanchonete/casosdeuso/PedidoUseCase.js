@@ -1,4 +1,4 @@
-const pedidoService = require('../../application/services/PedidoService');
+const pedidoService = require('../interfaces/controladores/PedidoController');
 
 
 const criarPedido = async (req, res) => {

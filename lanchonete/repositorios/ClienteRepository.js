@@ -1,4 +1,4 @@
-const Cliente = require('../entidades/cliente');
+const Cliente = require('../entidades/Cliente');
 
 async function cadastrarCliente(clienteData) {
   const cliente = new Cliente(clienteData);
