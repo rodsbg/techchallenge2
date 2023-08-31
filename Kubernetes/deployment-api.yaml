@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: lanchonete-api
-          image: rodgol/lanchonete
+          image: rodgol/lanchonete:v1
           env:
             - name: API_KEY
               valueFrom:
