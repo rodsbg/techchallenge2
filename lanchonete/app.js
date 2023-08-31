@@ -14,7 +14,7 @@ const options = {
       description: "A sample API using Swagger and Express",
     },
   },
-  apis: ["./rotas/*.js"], // Path to the API routes
+  apis: ["./rotas/*.js"], // Path to the API rotas
 };
 
 const specs = swaggerJsdoc(options);
@@ -39,19 +39,19 @@ app.use(bodyParser.json());
 
 // Rota para cadastrar um cliente
 
-const ProdutoRoute = require('./rotas/ProdutoRoute');
-const clienteRoute = require('./rotas/ClienteRoute');
-const campanhaRoute = require('./rotas/routes/CampanhaRoute');
-const pedidoRoute = require('./rotas/routes/PedidoRoute');
-const pagamentoRoute = require('./rotas/FakecheckoutRoute');
+const produtorota = require('./rotas/produtorota');
+const clienterota = require('./rotas/clienterota');
+const campanharota = require('./rotas/rotas/campanharota');
+const pedidorota = require('./rotas/rotas/pedidorota');
+const pagamentorota = require('./rotas/pagamentorota');
 
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
-app.use('/api', ProdutoRoute);
-app.use('/api', clienteRoute);
-app.use('/api', campanhaRoute);
-app.use('/api', pedidoRoute);
-app.use('/api', pagamentoRoute);
+app.use('/api', produtorota);
+app.use('/api', clienterota);
+app.use('/api', campanharota);
+app.use('/api', pedidorota);
+app.use('/api', pagamentorota);
 
 
 
