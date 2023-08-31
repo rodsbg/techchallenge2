@@ -28,8 +28,6 @@ const pedidorota = require('../interfaces/rotas/PedidoRoute');
 
 const pagamentorota = require('../interfaces/rotas/PagamentoRoute');
 
-
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use('/api', produtorota);
 app.use('/api', clienterota);
 app.use('/api', campanharota);
