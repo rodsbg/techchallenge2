@@ -1,4 +1,4 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongodb
@@ -14,9 +14,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: mongodb:3.6.19-xenial
-        ports:
-          containerPort: 27017
+        image: bitnami/mongodb:latest
         env:
         - name: MONGO_INITDB_ROOT_PASSWORD
           valueFrom:
