@@ -1,4 +1,4 @@
-const clienteController = require('../../application/services/clienteController');
+const clienteController = require('../interfaces/controladores/ClienteController');
 class clienteUseCase {
     constructor(clienteController,campanhaController) {
       this.clienteController = clienteController;
