@@ -39,6 +39,13 @@ app.use(bodyParser.json());
 
 // Rota para cadastrar um cliente
 
+const ProdutoRoute = require('./rotas/ProdutoRoute');
+const clienteRoute = require('./rotas/ClienteRoute');
+const campanhaRoute = require('./rotas/routes/CampanhaRoute');
+const pedidoRoute = require('./rotas/routes/PedidoRoute');
+const pagamentoRoute = require('./rotas/FakecheckoutRoute');
+
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use('/api', ProdutoRoute);
 app.use('/api', clienteRoute);
