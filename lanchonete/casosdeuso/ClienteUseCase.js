@@ -1,8 +1,8 @@
-const clienteController = require('../interfaces/controladores/ClienteController');
-class clienteController {
-    constructor(clienteController,campanhaService) {
+const clienteController = require('../../application/services/clienteController');
+class clienteUseCase {
+    constructor(clienteController,campanhaController) {
       this.clienteController = clienteController;
-      this.campanhaService = campanhaService;
+      this.campanhaController = campanhaController;
     }
   
     async cadastrarCliente(req, res) {
@@ -47,7 +47,7 @@ class clienteController {
         const { cpf, mensagem } = req.body;
     
         try {
-          const promocao = await campanhaService.criarPromocao(cpf, mensagem);
+          const promocao = await campanhaController.criarPromocao(cpf, mensagem);
           res.status(201).json({ mensagem: 'Promoção criada com sucesso.', promotion });
         } catch (error) {
           res.status(400).json({ error: error.message });
@@ -55,7 +55,4 @@ class clienteController {
       }
   }
   
-  module.exports = clienteController;
-  
- 
-  
+  module.exports = clienteUseCase;

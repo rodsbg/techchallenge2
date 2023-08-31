@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
 const options = {
