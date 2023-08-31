@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
+const app = express();
+
+app.use(bodyParser.json());
+
 const options = {
   definition: {
     openapi: '3.0.0',
