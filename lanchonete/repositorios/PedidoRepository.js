@@ -17,6 +17,13 @@ async function listarPedidos() {
     return Pedido.find();
   }
 
+  async function  listarPedidosnaofinalizados() {
+    return Pedido.find({status: { $not: 'Finalizado'}});
+  }
+
+ 
+
+
 const buscarpedidosporcpfPedidos = async (cpf) => {
   try {
     const pedidos = await Pedido.find({ cpf });
@@ -38,4 +45,4 @@ const editarStatusPedido = async (cpf, PedidoData) => {
 };
 
 
-module.exports = { criarPedido, listarPedidos, buscarpedidosporcpfPedidos, editarStatusPedido };
+module.exports = { criarPedido, listarPedidos, buscarpedidosporcpfPedidos, editarStatusPedido, listarPedidosnaofinalizados };

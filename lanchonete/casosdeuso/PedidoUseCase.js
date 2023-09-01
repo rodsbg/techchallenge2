@@ -37,12 +37,25 @@ const buscarpedidosporcpfPedidos = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+//Listar Pedidos menos os finalizados
+const listarPedidosnaofinalizados = async(req,res) => {
+  try {
+    
+    const pedido = await pedidoController.listarPedidosnaofinalizados();
 
-
+    if (!pedido) {
+      res.status(404).json({ error: 'Nenhum Pedido Cadastrado' });
+    } else {
+      res.status(200).json(pedido);
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
 
 
 
 module.exports = {
-    criarPedido, listarPedidos, buscarpedidosporcpfPedidos
+    criarPedido, listarPedidos, buscarpedidosporcpfPedidos, listarPedidosnaofinalizados 
   };
   

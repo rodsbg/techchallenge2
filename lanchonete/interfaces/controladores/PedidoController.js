@@ -41,6 +41,13 @@ async function listarPedidos() {
   return pedidoRepository.listarPedidos();
 }
 
+async function listarPedidosnaofinalizados() {
+  
+  return pedidoRepository.listarPedidosnaofinalizados();
+}
+
+
+
 
 const buscarpedidosporcpfPedidos = async (cpf) => {
   try {
@@ -50,4 +57,4 @@ const buscarpedidosporcpfPedidos = async (cpf) => {
   }
 };
 
-module.exports = { cadastrarPedido, listarPedidos, buscarpedidosporcpfPedidos }
+module.exports = { cadastrarPedido, listarPedidos, buscarpedidosporcpfPedidos, listarPedidosnaofinalizados }

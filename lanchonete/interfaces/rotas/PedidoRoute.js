@@ -76,8 +76,20 @@ const router = express.Router();
  *       200:
  *         description: Listagem ok
 */ 
+
+/**
+ * @openapi
+ * /api/pedidosnaofinalizado:
+ *   get:
+ *     summary: lista todos os pedidos não finalizados
+ *     description: lista todos os pedidos não finalizados
+ *     responses:
+ *       200:
+ *         description: Listagem ok
+*/ 
 router.post('/pedido', pedidoUseCase.criarPedido);
 router.get('/pedido', pedidoUseCase.listarPedidos);
 router.get('/pedido/:cpf', pedidoUseCase.buscarpedidosporcpfPedidos);
+router.get('/pedido',pedidoUseCase.listarPedidosnaofinalizados)
 
 module.exports = router;
