@@ -6,8 +6,8 @@ const router = express.Router();
  * @openapi
  * /api/consultapagamentos:
  *   get:
- *     summary: Consulta Pagamento (FakeCheckout)
- *     description: Consulta Pagamento (FakeCheckout)
+ *     summary: Consulta Pagamento
+ *     description: Consulta Pagamento 
  *     responses:
  *       200:
  *         description: Listagem dos pagamentos

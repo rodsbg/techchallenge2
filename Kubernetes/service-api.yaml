@@ -8,5 +8,5 @@ spec:
     app: api
   ports:
     - protocol: TCP
-      port: 80  # Port do seu aplicativo
+      port: 3000  # Port do seu aplicativo
   type: LoadBalancer

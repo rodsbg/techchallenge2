@@ -30,7 +30,7 @@ async function cadastrarPedido(pedidoData) {
   //console.log(pedidoData);
 
   const pedido = await pedidoRepository.criarPedido(pedidoData);
-  // realiza o pagamento (fake checkout) e muda o status do pedido
+  // realiza o pagamento e muda o status do pedido
   const pagamento = await pagamentoRepository.criarPagamento(pedidoData);
   // muda status do pedido para Enviado para a cozinha
   const mudarstatus = await pedidoRepository.editarStatusPedido();

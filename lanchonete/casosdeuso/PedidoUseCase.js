@@ -6,7 +6,7 @@ const criarPedido = async (req, res) => {
 
     const pedido = await pedidoController.cadastrarPedido(req.body);
 
-    //inicia o fake checkout
+    //inicia o checkout
        
     res.status(201).json(pedido);
   } catch (error) {
