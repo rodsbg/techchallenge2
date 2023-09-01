@@ -31,7 +31,6 @@ const buscarpedidosporcpfPedidos = async (cpf) => {
   }
 };
 //altera status do pedido
-
 const editarStatusPedido = async (cpf, PedidoData) => {
   try {
     const pedido = await Produto.findByIdAndUpdate(cpf, PedidoData, {
