@@ -18,11 +18,9 @@ async function listarPedidos() {
   }
 
   async function  listarPedidosnaofinalizados() {
-    return Pedido.find({status: { $not: 'Finalizado'}});
+
+    return Pedido.find({status: {$in: ['Pronto', 'Em Preparacao','Recebido' ]}}).sort(["status"]);
   }
-
- 
-
 
 const buscarpedidosporcpfPedidos = async (cpf) => {
   try {
@@ -32,6 +30,7 @@ const buscarpedidosporcpfPedidos = async (cpf) => {
     throw new Error('Erro buscar pedido pelo cpf.');
   }
 };
+//altera status do pedido
 
 const editarStatusPedido = async (cpf, PedidoData) => {
   try {

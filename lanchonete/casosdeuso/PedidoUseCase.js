@@ -31,12 +31,26 @@ const listarPedidos = async(req,res) => {
 const buscarpedidosporcpfPedidos = async (req, res) => {
   try {
     const { cpf } = req.params;
-    const pedidos = await produtoService.buscarpedidosporcpfPedidos(categoria);
+    const pedidos = await produtoController.buscarpedidosporcpfPedidos(categoria);
     res.json(pedidos);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
+//consulta status do pedido e retorna se pagamento foi aprovado ou não
+
+const consultaStatuspagamento = async (req, res) => {
+  try {
+    const { cpf } = req.params;
+    const pedidos = await produtoController.buscarpedidosporcpfPedidos(categoria);
+    res.json(pedidos.status);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+
 //Listar Pedidos menos os finalizados
 const listarPedidosnaofinalizados = async(req,res) => {
   try {
@@ -56,6 +70,5 @@ const listarPedidosnaofinalizados = async(req,res) => {
 
 
 module.exports = {
-    criarPedido, listarPedidos, buscarpedidosporcpfPedidos, listarPedidosnaofinalizados 
-  };
+    criarPedido, listarPedidos, buscarpedidosporcpfPedidos, listarPedidosnaofinalizados, consultaStatuspagamento };
   

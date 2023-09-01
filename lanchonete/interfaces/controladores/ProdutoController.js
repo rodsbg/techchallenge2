@@ -1,4 +1,4 @@
-// src/app/services/produtoService.js
+
 const produtoRepository = require('../../repositorios/ProdutoRepository');
 
 const criarProduto = async (produtoData) => {
@@ -14,7 +14,7 @@ const criarProduto = async (produtoData) => {
 const editarProduto = async (produtoData) => {
   try {
     
-    //console.log(codigo, "Service")
+    //console.log(codigo, "Controller")
     return await produtoRepository.editarProduto(produtoData);
   } catch (error) {
     throw new Error('Erro ao editar o produto.');
@@ -23,7 +23,7 @@ const editarProduto = async (produtoData) => {
 
 const removerProduto = async (produtoId) => {
   try {
-//    console.log(produtoId, "   ", "service");
+//    console.log(produtoId, "   ", "Controller");
     await produtoRepository.removerProduto(produtoId);
   } catch (error) {
     throw new Error('Erro ao remover o produto.');

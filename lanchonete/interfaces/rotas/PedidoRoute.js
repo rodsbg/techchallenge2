@@ -79,10 +79,20 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/pedidosnaofinalizado:
+ * /api/pedidosnaofinalizados:
  *   get:
- *     summary: lista todos os pedidos não finalizados
- *     description: lista todos os pedidos não finalizados
+ *     summary: lista todos os pedidos não finalizados e por ordem: pronto, em preparacao, Recebido
+ *     description: lista todos os pedidos não finalizados e por ordem: pronto, em preparacao, Recebido
+ *     responses:
+ *       200:
+ *         description: Listagem ok
+*/
+/**
+ * @openapi
+ * /api/pedidosconsultapagamento:
+ *   get:
+ *     summary: Consulta status do pagamento do pedido, aprovado ou não
+ *     description: Consulta status do pagamento do pedido, aprovado ou não
  *     responses:
  *       200:
  *         description: Listagem ok
@@ -90,6 +100,7 @@ const router = express.Router();
 router.post('/pedido', pedidoUseCase.criarPedido);
 router.get('/pedido', pedidoUseCase.listarPedidos);
 router.get('/pedido/:cpf', pedidoUseCase.buscarpedidosporcpfPedidos);
-router.get('/pedido',pedidoUseCase.listarPedidosnaofinalizados)
+router.get('/pedidonaofinalizados',pedidoUseCase.listarPedidosnaofinalizados)
+router.get('/pedidosconsultapagamento',pedidoUseCase.consultaStatuspagamento)
 
 module.exports = router;
