@@ -17,9 +17,27 @@ async function listarPedidos() {
     return Pedido.find();
   }
 
-  async function  listarPedidosnaofinalizados() {
+async function  listarPedidosnaofinalizados() {
 
-    return Pedido.find({status: {$in: ['Pronto', 'Em Preparacao','Recebido' ]}}).sort(["status"]);
+const statusDesejados = ['Pronto', 'Em Preparacao', 'Recebido'];
+
+// Consulta e ordenação personalizada
+return Pedido.find({ status: { $in: statusDesejados } })
+  .sort({ 
+    status: {
+      $cond: {
+        if: { $eq: ['$status', 'Pronto'] }, // Primeiro classificar "Pronto"
+        then: 1,
+        else: {
+          $cond: {
+            if: { $eq: ['$status', 'Em Preparacao'] }, // Em seguida, classificar "recebido"
+            then: 2,
+            else: 3 // Por último, "Recebido"
+          }
+        }
+      }
+    }
+  })
   }
 
 const buscarpedidosporcpfPedidos = async (cpf) => {
