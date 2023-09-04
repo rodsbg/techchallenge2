@@ -96,7 +96,7 @@ router.post('/pedido', pedidoUseCase.criarPedido);
 router.get('/pedido', pedidoUseCase.listarPedidos);
 router.get('/pedido/:cpf', pedidoUseCase.buscarpedidosporcpfPedidos);
 //consulta pedidos não finalizados
-router.get('/pedidonaofinalizados',pedidoUseCase.listarPedidosnaofinalizados);
+router.get('/pedidosnaofinalizados',pedidoUseCase.listarPedidosnaofinalizados);
 
 
 module.exports = router;
