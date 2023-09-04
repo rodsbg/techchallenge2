@@ -15,7 +15,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/pedidoconfirmacaopagamento:
+ * /api/pedidoconfirmacaopagamento/{cpf}:
  *   post:
  *     summary: Cadastrar pedido ao cpf indicado
  *     description: Incluir pedido ao cpf indicado
@@ -42,7 +42,7 @@ const router = express.Router();
 
 //webhook recebe confirmação do pagamento
 
-router.post('/pedidoconfirmacaopagamento', pagamentoUseCase.buscarStatusPgtporcpf );
+router.post('/pedidoconfirmacaopagamento/:cpf', pagamentoUseCase.buscarStatusPgtporcpf );
 
 router.get('/consultapagamentos', pagamentoUseCase.listarPagamentos);
 
