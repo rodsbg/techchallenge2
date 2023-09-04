@@ -4,7 +4,7 @@ Fiap - techChallenge 2 - Clean Arquitecture
 
 O projecto do Tech Challenge foi desenvolvido baseado no aprendizado das aulas.
 
-Rm349108 - Renato Gagliard Sabo <br />
+Rm349615 - Alexandre Montesino da Costa Campos <br />
 Rm349612 - Ricardo Amaral Jara <br />
 Rm350424 - Rodrigo Barboza Gonçalves
 
