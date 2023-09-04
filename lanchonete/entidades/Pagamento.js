@@ -30,6 +30,10 @@ const pedidosSchema = new mongoose.Schema({
   preco: {
     type: String,
     required: true,
+  },
+  statuspagamento: {
+    type: String,
+    required: true,
   }
 });
 

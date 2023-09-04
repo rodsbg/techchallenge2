@@ -6,7 +6,7 @@ const criarPedido = async (req, res) => {
 
     const pedido = await pedidoController.cadastrarPedido(req.body);
 
-    //inicia o checkout
+    //inicia o checkout e retorna o pedido
        
     res.status(201).json(pedido);
   } catch (error) {
@@ -51,7 +51,7 @@ const consultaStatuspagamento = async (req, res) => {
 
 
 
-//Listar Pedidos menos os finalizados
+//Listar Pedidos exceto finalizados
 const listarPedidosnaofinalizados = async(req,res) => {
   try {
     

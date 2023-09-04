@@ -30,7 +30,7 @@ return Pedido.find({ status: { $in: statusDesejados } })
         then: 1,
         else: {
           $cond: {
-            if: { $eq: ['$status', 'Em Preparacao'] }, // Em seguida, classificar "recebido"
+            if: { $eq: ['$status', 'Em Preparacao'] }, // Em seguida, classificar "Em Preparação"
             then: 2,
             else: 3 // Por último, "Recebido"
           }
@@ -39,7 +39,7 @@ return Pedido.find({ status: { $in: statusDesejados } })
     }
   })
   }
-
+//retorna identificação do pedido
 const buscarpedidosporcpfPedidos = async (cpf) => {
   try {
     const pedidos = await Pedido.find({ cpf });

@@ -1,8 +1,16 @@
-const pedidoRepository = require('../../repositorios/PagamentoRepository');
+const pagamentoRepository = require('../../repositorios/PagamentoRepository');
 
 async function listarPagamentos() {
   
-  return pedidoRepository.listarPagamentos();
+  return pagamentoRepository.listarPagamentos();
 }
 
-module.exports = { listarPagamentos  }
+const buscarStatusPgtporcpf = async (cpf) => {
+  try {
+    return await pagamentoRepository.buscarStatusPgtporcpf(cpf);
+  } catch (error) {
+    throw new Error('Nenhum pedido cadastrado para o cliente');
+  }
+};
+
+module.exports = { listarPagamentos, buscarStatusPgtporcpf   }

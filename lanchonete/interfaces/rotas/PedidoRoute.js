@@ -20,6 +20,7 @@ const router = express.Router();
  *              - acompanhamento
  *              - bebida
  *              - status
+ *              - statuspagamento 
  *              - ondecomer
  *            properties:
  *              cpf:
@@ -37,6 +38,9 @@ const router = express.Router();
  *              status:
  *                type: string
  *                default: Enviado
+ *              statuspagamento:
+ *                type: string
+ *                default: Não confirmado
  *              ondecomer:
  *                type: string
  *                default: Viagem
@@ -87,20 +91,12 @@ const router = express.Router();
  *       200:
  *         description: Listagem ok
 */
-/**
- * @openapi
- * /api/pedidosconsultapagamento:
- *   get:
- *     summary: Consulta status do pagamento do pedido, aprovado ou não
- *     description: Consulta status do pagamento do pedido, aprovado ou não
- *     responses:
- *       200:
- *         description: Listagem ok
-*/ 
+
 router.post('/pedido', pedidoUseCase.criarPedido);
 router.get('/pedido', pedidoUseCase.listarPedidos);
 router.get('/pedido/:cpf', pedidoUseCase.buscarpedidosporcpfPedidos);
-router.get('/pedidonaofinalizados',pedidoUseCase.listarPedidosnaofinalizados)
-router.get('/pedidosconsultapagamento',pedidoUseCase.consultaStatuspagamento)
+//consulta pedidos não finalizados
+router.get('/pedidonaofinalizados',pedidoUseCase.listarPedidosnaofinalizados);
+
 
 module.exports = router;

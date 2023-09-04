@@ -14,7 +14,16 @@ const listarPagamentos = async(req,res) => {
     res.status(500).json({ error: error.message });
   }
 }
-module.exports = {
-   listarPagamentos
-  };
+
+const buscarStatusPgtporcpf  = async (req, res) => {
+  try {
+    const { cpf } = req.params;
+    const pagamento = await pagamentoController.buscarStatusPgtporcpf(categoria);
+    res.json(pagamento);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = { listarPagamentos, buscarStatusPgtporcpf  };
   
