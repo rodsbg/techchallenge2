@@ -1,11 +1,27 @@
-# Techchallenge2
+# Techchallenge2 - Grupo 11
 
 Fiap - techChallenge 2 - Clean Arquitecture
+
+O projecto do Tech Challenge foi desenvolvido baseado no aprendizado das aulas.
+
+Rm349108 - Renato Gagliard Sabo 
+Rm349612 - Ricardo Amaral Jara 
+Rm350424 - Rodrigo Barboza Gonçalves
 
 Pre-requisitos
 
 1 - docker
 2 - kubernetes
+3 - Git
+
+Recursos
+
+node.js
+Swagger
+express
+mongodb
+
+Link de acesso: https://github.com/rodsbg/techchallenge2.git
 
 Execução
 
