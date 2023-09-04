@@ -14,7 +14,7 @@ const router = express.Router();
 */ 
 
 // Rota para receber notificações do Mercado Pago
-router.post('/webhook/mercado-pago', (req, res) => {
+router.post('/api/consultapgtomercadopago', (req, res) => {
     const data = req.body; // Dados da notificação
   
     // Aqui você pode processar os dados da notificação como necessário
