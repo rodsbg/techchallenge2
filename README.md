@@ -33,7 +33,7 @@ Disponibilizar a imagem no DockerHub (https://hub.docker.com/repositories/rodgol
 2 - executar o: docker build -t rodgol/lanchonete:v1.0.0 . -f ../Dockerfile/Dockerfile <br />
 3 - realizar login no dockerhub: docker login registry-1.docker.io -u rodgol <br />
 4 - token para carregar a imagem no dockerhub : dckr_pat_GJwsJodWmVFg2vege2upWmDzhHs <br />
-5 - executar o push para o dockerhub: docker push rodgol/lanchonete:v1 (irá copiar para o dockeuhub) 
+5 - executar o push para o dockerhub: docker push rodgol/lanchonete:v1.0.0 (irá copiar para o dockeuhub) 
 
 Criar os recursos no Cluster Kubernetes
 
