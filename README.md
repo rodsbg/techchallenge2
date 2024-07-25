@@ -23,6 +23,8 @@ mongodb <br />
 
 Link de acesso: https://github.com/rodsbg/techchallenge2.git
 
+Realizar o clone do projeto: git clone https://github.com/rodsbg/techchallenge2.git
+
 Execução
 
 Disponibilizar a imagem no DockerHub (https://hub.docker.com/repositories/rodgol)
