@@ -114,7 +114,8 @@ Para rodar uma aplicação Node.js em um ambiente Kubernetes, é necessário con
 
 # Arquitetura infraE
 
-![image](https://github.com/user-attachments/assets/2478f727-8cb9-481e-9da6-3f53324a5ff3)
+![image](https://github.com/user-attachments/assets/714adfd9-f879-4dd3-b0e3-d95d0704c594)
+
 
 
 
