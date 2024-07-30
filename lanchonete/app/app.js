@@ -49,15 +49,12 @@ const pedidorota = require('../interfaces/rotas/PedidoRoute');
 
 const pagamentorota = require('../interfaces/rotas/PagamentoRoute');
 
-const webhookPagamentoRoute = require('../interfaces/rotas/PagamentoRoute');
 
 app.use('/api', campanharota);
 app.use('/api', clienterota);
 app.use('/api', pedidorota);
 app.use('/api', pagamentorota);
 app.use('/api', produtorota);
-app.use('/api', webhookPagamentoRoute);
-
 
 
 

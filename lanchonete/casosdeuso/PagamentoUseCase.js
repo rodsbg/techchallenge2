@@ -25,5 +25,9 @@ const buscarStatusPgtporcpf  = async (req, res) => {
   }
 };
 
+exports.processarNotificacaoPagamento = async (notification) => {
+  const { id, status, transaction_amount } = notification;
+
+
 module.exports = { listarPagamentos, buscarStatusPgtporcpf  };
   
