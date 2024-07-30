@@ -55,13 +55,6 @@ A arquitetura do sistema pode ser dividida em camadas, cada uma responsável por
 
 ### Camadas da Arquitetura
 
-#### Camada de Apresentação
-**Objetivo:** Fornecer uma interface de usuário intuitiva para funcionários e clientes.
-
-- **Interface Web e Mobile:** Aplicações responsivas que permitem a interação com o sistema de qualquer dispositivo.
-- **Painel de Administração:** Interface para gerenciamento de pedidos, clientes, produtos e campanhas promocionais.
-- **Interface do Cliente:** Plataforma para realização de pedidos online, visualização de menu e promoções.
-
 #### Camada de Aplicação
 **Objetivo:** Implementar a lógica de negócios e orquestrar os serviços.
 
@@ -86,7 +79,7 @@ A arquitetura do sistema pode ser dividida em camadas, cada uma responsável por
   - **Banco de dados utilizado:** MongoDB - string de conexão: `mongodb://seu-usuario:senha@host:porta/database`
 
 #### Camada de Integração
-**Objetivo:** Integrar com sistemas externos e serviços de terceiros.
+**Objetivo:** Integrar com mercado pago para pagamentos.
 
 - **Sistemas de Pagamento:** Integração com gateways de pagamento para processar transações.
 
