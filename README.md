@@ -38,7 +38,7 @@ Disponibilizar a imagem no DockerHub (https://hub.docker.com/repositories/rodgol
 Criar os recursos no Cluster Kubernetes
 
 1 - Na pasta Kubernetes aplicar para todos os yaml dentro da pasta não esquecer do ponto, kubectl apply -f . <br />
-2 - kubectl get svc para pegar qual a porta que foi configurada e o IP externo <br />
+2 - kubectl get svc para pegar qual a porta que foi configurada e o IP externo (Verificar se esta correto o Loadbalancer) <br />
 3 - acessar pelo browser: http://ip-externo:porta/api-docs 
 
 Acessando as apis
