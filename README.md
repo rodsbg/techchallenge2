@@ -84,3 +84,39 @@ A arquitetura do sistema pode ser dividida em camadas, cada uma responsável por
 - **Sistemas de Pagamento:** Integração com gateways de pagamento para processar transações.
 
 
+# Requisitos de Infraestrutura para Aplicação Node.js em Kubernetes
+
+Para rodar uma aplicação Node.js em um ambiente Kubernetes, é necessário configurar e garantir que sua infraestrutura atenda a certos requisitos.
+
+## Componentes de InfraEstrutura da Arquitetura
+
+### OKE - Oracle Kubernetes Engine
+- **Cloud Provider**: Cloud utilizada para deploy da aplicação.
+
+### Serviço Kubernetes
+- **Service**: Expõe a aplicação Node.js dentro do cluster. (api-service)
+
+### Pods e Deployment
+- **Pod**: Contém a instância da aplicação Node.js.
+- **Deployment**: Gerencia a criação e escalabilidade desses Pods. (api-deployment e mongodb)
+
+### Secret
+- **Secret**: Armazena dados sensíveis (credenciais de banco de dados) e Mercado Pago.
+
+### Banco de Dados
+- **Banco de Dados**: NoSQL - MongoDB, configurado como microserviço.
+
+### GitHub
+- **Armazenamento do código**: Utilizado para armazenar os arquivos de programação e readme.md.
+
+### Docker Hub
+- **Armazenamento da Imagem**: Utilizado como repositório de imagens para a aplicação.
+
+# Arquitetura infraE
+
+![image](https://github.com/user-attachments/assets/2478f727-8cb9-481e-9da6-3f53324a5ff3)
+
+
+
+
+
