@@ -23,21 +23,22 @@ mongodb <br />
 
 Link de acesso: https://github.com/rodsbg/techchallenge2.git
 
+Realizar o clone do projeto: git clone https://github.com/rodsbg/techchallenge2.git
+
 Execução
 
 Disponibilizar a imagem no DockerHub (https://hub.docker.com/repositories/rodgol)
 
 1 - ir para o diretório lanchonete <br />
-2 - executar o: docker build -t rodgol/lanchonete:v1.0.0 . -f ../Dockerfile/Dockerfile <br />
+2 - executar o: docker build -t rodgol/lanchonete:v1 . -f Dockerfile/Dockerfile <br />
 3 - realizar login no dockerhub: docker login -u rodgol <br />
-4 - token para carregar a imagem no dockerhub : dckr_pat_VQvc1DT-XmMT6_XwAhz4G0os8oE <br />
-5 - executar o push para o dockerhub: docker push rodgol/lanchonete:v1 (irá copiar para o dockeuhub)
-7 - 
+4 - token para carregar a imagem no dockerhub : dckr_pat_GJwsJodWmVFg2vege2upWmDzhHs <br />
+5 - executar o push para o dockerhub: docker push rodgol/lanchonete:v1 (irá copiar para o dockeuhub) 
 
 Criar os recursos no Cluster Kubernetes
 
 1 - Na pasta Kubernetes aplicar para todos os yaml dentro da pasta não esquecer do ponto, kubectl apply -f . <br />
-2 - kubectl get svc para pegar qual a porta que foi configurada e o IP externo <br />
+2 - kubectl get svc para pegar qual a porta que foi configurada e o IP externo (Verificar se esta correto o Loadbalancer) <br />
 3 - acessar pelo browser: http://ip-externo:porta/api-docs 
 
 Acessando as apis
