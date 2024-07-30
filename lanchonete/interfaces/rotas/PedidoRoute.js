@@ -85,8 +85,8 @@ const router = express.Router();
  * @openapi
  * /api/pedidosnaofinalizados:
  *   get:
- *     summary: lista todos os pedidos não finalizados e por ordem: pronto, em preparacao, Recebido
- *     description: lista todos os pedidos não finalizados e por ordem: pronto, em preparacao, Recebido
+ *     summary: lista todos os pedidos não finalizados e por ordem - pronto, em preparacao, Recebido
+ *     description: lista todos os pedidos não finalizados e por ordem - pronto, em preparacao, Recebido
  *     responses:
  *       200:
  *         description: Listagem ok

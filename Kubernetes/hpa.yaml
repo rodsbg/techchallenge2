@@ -1,0 +1,27 @@
+apiVersion: v1
+items:
+- apiVersion: autoscaling/v2
+  kind: HorizontalPodAutoscaler
+  metadata:
+    creationTimestamp: "2024-07-29T22:10:48Z"
+    name: api-deployment
+    namespace: default
+    resourceVersion: "1890272"
+    uid: d165f460-8eec-46da-bf05-63706c1afebd
+  spec:
+    maxReplicas: 5
+    metrics:
+    - resource:
+        name: cpu
+        target:
+          averageUtilization: 80
+          type: Utilization
+      type: Resource
+    minReplicas: 1
+    scaleTargetRef:
+      apiVersion: apps/v1
+      kind: Deployment
+      name: api-deployment
+kind: List
+metadata:
+  resourceVersion: ""

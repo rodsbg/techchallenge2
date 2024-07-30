@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: api-deployment
 spec:
-  replicas: 2
+  replicas: 
   selector:
     matchLabels:
       app: api

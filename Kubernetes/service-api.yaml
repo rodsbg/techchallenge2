@@ -9,4 +9,4 @@ spec:
   ports:
     - protocol: TCP
       port: 3000  # Port do seu aplicativo
-  type: LoadBalancer
+  type: NodePort
