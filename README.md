@@ -76,10 +76,10 @@ A arquitetura do sistema pode ser dividida em camadas, cada uma responsável por
 **Objetivo:** Armazenar e recuperar dados do banco de dados.
 
 - **Banco de Dados NoSQL:** Para armazenar dados estruturados sobre pedidos, clientes, produtos, campanhas e pagamentos.
-  - **Banco de dados utilizado:** MongoDB - string de conexão: `mongodb://seu-usuario:senha@host:porta/database`
+  - **Banco de dados utilizado:** MongoDB - string de conexão: `MONGO_URI=mongodb://lanchonete-mongodb-1:27017/techchallengelanchonete`
 
 #### Camada de Integração
-**Objetivo:** Integrar com mercado pago para pagamentos.
+**Objetivo:** Integrar com `Mercado Pago` para pagamentos.
 
 - **Sistemas de Pagamento:** Integração com gateways de pagamento para processar transações.
 
