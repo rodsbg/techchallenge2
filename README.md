@@ -10,6 +10,7 @@ Rm350424 - Rodrigo Barboza Gonçalves
 
 ## Vídeo You tube demonstrando a infraestrutura na cloud
 
+### https://youtu.be/UuPISXmZwr8
 
 ## Pre-requisitos
 
