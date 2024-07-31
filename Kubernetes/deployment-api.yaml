@@ -16,3 +16,4 @@ spec:
       containers:
         - name: lanchonete-api
           image: rodgol/lanchonete:v1
+          imagePullPolicy: Always
