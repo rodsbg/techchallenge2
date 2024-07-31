@@ -116,6 +116,41 @@ Para rodar uma aplicação Node.js em um ambiente Kubernetes, é necessário con
 
 ![image](https://github.com/user-attachments/assets/714adfd9-f879-4dd3-b0e3-d95d0704c594)
 
+# Documentação da API
+
+Este repositório contém a documentação da API e exemplos de execução para as rotas disponíveis.
+
+## Rotas da API
+
+- **Campanha Routes**
+  - Adicionar Campanha ao CPF
+  - Listar Todas as Campanhas
+
+- **Cliente Routes**
+  - Cadastrar Cliente
+  - Listar Todos os Clientes
+  - Consultar Cliente pelo CPF
+
+- **Pagamento Routes**
+  - Consultar Pagamentos
+  - Confirmar Pedido de Pagamento
+  - Receber Notificações de Pagamento
+  - Gerar QR Code para Pagamento
+
+- **Pedido Routes**
+  - Cadastrar Pedido
+  - Listar Todos os Pedidos
+  - Acompanhamento do Pedido
+  - Listar Pedidos Não Finalizados
+
+- **Produto Routes**
+  - Inserir Produto
+  - Alterar Produto
+  - Deletar Produto
+  - Listar Produtos por Categoria
+  - Listar Produtos
+
+## Exemplos de Execução
 
 
 
