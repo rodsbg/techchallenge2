@@ -150,164 +150,137 @@ Este repositório contém a documentação da API e exemplos de execução para 
   - Listar Produtos por Categoria
   - Listar Produtos
 
-# Exemplos de Execução da API
+## 1. Cadastro de Cliente
+**Método**: POST
+**URL**: /api/clientes
 
-## 1. Campanha Routes
+Exemplo de Requisição:
+```
+curl -X POST "http://localhost:3000/api/clientes" \
+-H "Content-Type: application/json" \
+-d '{
+  "nome": "João da Silva",
+  "cpf": "12345678901",
+  "email": "jsilva@gmail.com"
+}'
+```
+Resposta Esperada:
 
-### Adicionar Campanha ao CPF
-
-**Método**: PUT  
-**URL**: `/api/campanha/{cpf}`  
-**Exemplo de Requisição**:
 ```
 {
-  "cpf": "12345678901",
-  "campanha": "15% de desconto nas próximas compras"
+  "message": "Cliente cadastrado com sucesso"
 }
 ```
-Listar Todas as Campanhas
- **Método**: GET
-**URL**:  /api/campanha
+## 2. Listar Todos os Clientes
+**Método**: GET
+**URL**: /api/clientes
+
+Exemplo de Requisição:
+```
+curl -X GET "http://localhost:3000/api/clientes"
+```
 Resposta Esperada:
+```
+  {
+    "nome": "João da Silva",
+    "cpf": "12345678901",
+    "email": "jsilva@gmail.com"
+  },
+  {
+    "nome": "Maria Oliveira",
+    "cpf": "98765432100",
+    "email": "maria.oliveira@gmail.com"
+  }
+```
+## 3. Consultar Cliente pelo CPF
+**Método**: GET
+**URL**: /api/clientes/{cpf}
+**Exemplo de URL**:  ```/api/clientes/12345678901 ```
+
+Exemplo de Requisição:
+```
+curl -X GET "http://localhost:3000/api/clientes/12345678901"
+```
+Resposta Esperada:
+```
+{
+  "nome": "João da Silva",
+  "cpf": "12345678901",
+  "email": "jsilva@gmail.com"
+}
+```
+## 4. Cadastro de Campanha
+**Método**: PUT
+**URL**: /api/campanha/{cpf}
+**Exemplo de URL**: ```/api/campanha/12345678901```
+
+Exemplo de Requisição:
+```
+curl -X PUT "http://localhost:3000/api/campanha/12345678901" \
+-H "Content-Type: application/json" \
+-d '{
+  "cpf": "12345678901",
+  "campanha": "15% de desconto nas próximas compras"
+}'
+```
+Resposta Esperada:
+
+```
+{
+  "message": "Campanha cadastrada com sucesso"
+}
+```
+## 5. Listar Todas as Campanhas
+**Método**: GET
+**URL**: /api/campanha
+
+Exemplo de Requisição:
+```
+curl -X GET "http://localhost:3000/api/campanha"
+```
+Resposta Esperada:
+
 ```
   {
     "cpf": "12345678901",
     "campanha": "15% de desconto nas próximas compras"
-  },
-  {
-    "cpf": "10987654321",
-    "campanha": "10% de desconto em produtos selecionados"
   }
-``` 
-## 2. Cliente Routes
-### Cadastrar Cliente
- **Método**: POST
-**URL**:  /api/clientes
-**Exemplo de Requisição**:
 ```
-{
-  "nome": "João da Silva",
-  "cpf": 12345678901,
-  "email": "jsilva@gmail.com"
-}
+## 6. Cadastro de Pedido
+**Método**: POST
+**URL**: /api/pedido
+
+Exemplo de Requisição:
 ```
-### Listar Todos os Clientes
- **Método**: GET
-**URL**:  /api/clientes
-Resposta Esperada:
-
-  {
-    "id": "1",
-    "nome": "João da Silva",
-    "cpf": 12345678901,
-    "email": "jsilva@gmail.com"
-  },
-  {
-    "id": "2",
-    "nome": "Maria Oliveira",
-    "cpf": 98765432100,
-    "email": "maria.oliveira@example.com"
-  }
- 
-## 3. Pagamento Routes
-### Consultar Pagamentos
- **Método**: GET
-**URL**:  /api/consultapagamentos
-Resposta Esperada:
-
-  {
-    "id": "12345",
-    "cpf": "12345678901",
-    "status": "Confirmado"
-  },
-  {
-    "id": "67890",
-    "cpf": "10987654321",
-    "status": "Pendente"
-  }
- 
-### Confirmar Pedido de Pagamento
- **Método**: POST
-**URL**:  /api/pedidoconfirmacaopagamento/{cpf}
-**Exemplo de URL**:  /api/pedidoconfirmacaopagamento/12345678901
-**Exemplo de Requisição**:
-{
+curl -X POST "http://localhost:3000/api/pedido" \
+-H "Content-Type: application/json" \
+-d '{
   "cpf": "12345678901",
-  "status": "Confirmado"
-}
+  "lanche": "1",
+  "acompanhamento": "2",
+  "bebida": "3",
+  "status": "Enviado",
+  "statuspagamento": "Não confirmado",
+  "ondecomer": "Viagem"
+}'
+```
 Resposta Esperada:
-
+```
 {
   "message": "Pedido cadastrado com sucesso"
 }
-### Receber Notificações de Pagamento do Mercado Pago
- **Método**: POST
-**URL**:  /api/webhook/mercadopago
-**Exemplo de Requisição**:
-{
-  "id": "1234567890",
-  "status": "approved",
-  "transaction_amount": 100.00
-}
+```
+## 7. Listar Todos os Pedidos
+**Método**: GET
+**URL**: /api/pedido
+Exemplo de Requisição:
+```
+curl -X GET "http://localhost:3000/api/pedido"
+```
 Resposta Esperada:
 
-text
- 
-Notificação recebida com sucesso
-### Gerar QR Code para Pagamento
- **Método**: POST
-**URL**:  /api/generate-qr-code
-**Exemplo de Requisição**:
-
-{
-  "amount": 100.00
-}
-Resposta Esperada:
- 
-{
-  "qr_code_url": "https://example.com/qrcode.png"
-}
-## 4. Pedido Routes
-### Cadastrar Pedido
- **Método**: POST
-**URL**:  /api/pedido
-**Exemplo de Requisição**:
-
- 
- 
-{
-  "cpf": "12345678901",
-  "lanche": "1",
-  "acompanhamento": "2",
-  "bebida": "3",
-  "status": "Enviado",
-  "statuspagamento": "Não confirmado",
-  "ondecomer": "Viagem"
-}
-Resposta Esperada:
-
- 
- 
-{
-  "id": "1",
-  "cpf": "12345678901",
-  "lanche": "1",
-  "acompanhamento": "2",
-  "bebida": "3",
-  "status": "Enviado",
-  "statuspagamento": "Não confirmado",
-  "ondecomer": "Viagem"
-}
-### Listar Todos os Pedidos
- **Método**: GET
-**URL**:  /api/pedido
-Resposta Esperada:
-
- 
- 
- 
+```
   {
-    "id": "1",
     "cpf": "12345678901",
     "lanche": "1",
     "acompanhamento": "2",
@@ -316,104 +289,101 @@ Resposta Esperada:
     "statuspagamento": "Não confirmado",
     "ondecomer": "Viagem"
   }
- 
-### Acompanhamento do Pedido por CPF
- **Método**: GET
-**URL**:  /api/pedidos/{cpf}
-**Exemplo de URL**:  /api/pedidos/12345678901
+```
+## 8. Consultar Pedidos Não Finalizados
+**Método**: GET
+**URL**: /api/pedidosnaofinalizados
+
+Exemplo de Requisição:
+```
+curl -X GET "http://localhost:3000/api/pedidosnaofinalizados"
+```
 Resposta Esperada:
 
- 
- 
-{
-  "id": "1",
-  "cpf": "12345678901",
-  "lanche": "1",
-  "acompanhamento": "2",
-  "bebida": "3",
-  "status": "Enviado",
-  "statuspagamento": "Não confirmado",
-  "ondecomer": "Viagem"
-}
-### Listar Pedidos Não Finalizados
- **Método**: GET
-**URL**:  /api/pedidosnaofinalizados
-Resposta Esperada:
-
- 
- 
- 
+```
   {
-    "id": "1",
     "cpf": "12345678901",
     "lanche": "1",
     "acompanhamento": "2",
     "bebida": "3",
-    "status": "Em preparação",
+    "status": "Enviado",
     "statuspagamento": "Não confirmado",
     "ondecomer": "Viagem"
   }
- 
-## 5. Produto Routes
-### Inserir Produto
+```
+## 9. Inserir Produto
 **Método**: POST
-**URL**:  /api/produtos
-**Exemplo de Requisição**:
+**URL**: /api/produtos
 
- 
- 
-{
+Exemplo de Requisição:
+```
+curl -X POST "http://localhost:3000/api/produtos" \
+-H "Content-Type: application/json" \
+-d '{
   "codigo": 1,
   "nome": "Hamburguer",
   "categoria": "lanche",
   "descricao": "Pão, hamburguer e queijo",
   "preco": 15
-}
+}'
+```
 Resposta Esperada:
-
- 
- 
+```
 {
   "message": "Produto inserido com sucesso"
 }
-### Alterar Produto
- **Método**: PUT
-**URL**:  /api/produtos/{codigo}
-**Exemplo de URL**:  /api/produtos/1
-**Exemplo de Requisição**:
+```
+## 10. Alterar Produto
+**Método**: PUT
+**URL**: /api/produtos
+**Exemplo de URL**: /api/produtos
 
- 
- 
-{
+Exemplo de Requisição:
+```
+curl -X PUT "http://localhost:3000/api/produtos" \
+-H "Content-Type: application/json" \
+-d '{
+  "codigo": 1,
   "nome": "Hamburguer Especial",
   "categoria": "lanche",
   "descricao": "Pão, hamburguer, queijo e bacon",
   "preco": 20
-}
+}'
+```
 Resposta Esperada:
 
- 
- 
+```
 {
   "message": "Produto alterado com sucesso"
 }
-### Deletar Produto
+```
+## 11. Deletar Produto
 **Método**: DELETE
-**URL**:  /api/produtos/{codigo}
-**Exemplo de URL**:  /api/produtos/1
-Resposta Esperada:
+**URL**: /api/produtos/{codigo}
+**Exemplo de URL**: /api/produtos/1
 
- 
- 
+Exemplo de Requisição:
+```
+curl -X DELETE "http://localhost:3000/api/produtos/1"
+```
+Resposta Esperada:
+```
 {
   "message": "Produto deletado com sucesso"
 }
-### Listar Produtos por Categoria
+```
+## 12. Listar Produtos por Categoria
 **Método**: GET
-**URL**:  /api/produtos/categoria/{categoria}
-**Exemplo de URL**:  /api/produtos/categoria/lanche
+**URL**: /api/produtos/categoria/{categoria}
+Exemplo de **URL**: /api/produtos/categoria/lanche
+
+Exemplo de Requisição:
+```
+curl -X GET "http://localhost:3000/api/produtos/categoria/lanche"
+```
 Resposta Esperada:
- 
+
+```
   {
     "codigo": 1,
     "nome": "Hamburguer",
@@ -421,21 +391,79 @@ Resposta Esperada:
     "descricao": "Pão, hamburguer e queijo",
     "preco": 15
   }
-### Listar Produtos
+```
+## 13. Consultar Pagamentos
 **Método**: GET
-**URL**:  /api/produtos
+**URL**: /api/consultapagamentos
+
+Exemplo de Requisição:
+```
+curl -X GET "http://localhost:3000/api/consultapagamentos"
+```
 Resposta Esperada:
+
+```
   {
-    "codigo": 1,
-    "nome": "Hamburguer",
-    "categoria": "lanche",
-    "descricao": "Pão, hamburguer e queijo",
-    "preco": 15
-  },
-  {
-    "codigo": 2,
-    "nome": "Batata Frita",
-    "categoria": "acompanhamento",
-    "descricao": "Batata frita com sal",
-    "preco": 8
+    "id": "12345",
+    "cpf": "12345678901",
+    "status": "Confirmado"
   }
+```
+## 14. Cadastrar Pedido e Confirmar Pagamento
+**Método**: POST
+**URL**: /api/pedidoconfirmacaopagamento/{cpf}
+**Exemplo de URL**: /api/pedidoconfirmacaopagamento/12345678901
+
+Exemplo de Requisição:
+```
+curl -X POST "http://localhost:3000/api/pedidoconfirmacaopagamento/12345678901" \
+-H "Content-Type: application/json" \
+-d '{
+  "cpf": "12345678901",
+  "status": "Confirmado"
+}'
+```
+Resposta Esperada:
+
+```
+{
+  "message": "Pedido cadastrado com sucesso"
+}
+```
+## 15. Receber Notificações de Pagamento do Mercado Pago
+**Método**: POST
+**URL**: /api/webhook/mercadopago
+
+Exemplo de Requisição:
+```
+curl -X POST "http://localhost:3000/api/webhook/mercadopago" \
+-H "Content-Type: application/json" \
+-d '{
+  "id": "1234567890",
+  "status": "approved",
+  "transaction_amount": 100.00
+}'
+```
+Resposta Esperada:
+
+```
+{
+  "message": "Notificação recebida com sucesso"
+}
+```
+## 16. Gerar QR Code para Pagamento
+**Método**: GET
+**URL**: /api/qrcode/{pedidoId}
+**Exemplo de URL**: /api/qrcode/987654321
+
+Exemplo de Requisição:
+```
+curl -X GET "http://localhost:3000/api/qrcode/987654321"
+```
+Resposta Esperada:
+
+```
+{
+  "qrcode": "http://example.com/qrcode/987654321"
+}
+```
