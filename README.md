@@ -169,10 +169,7 @@ Listar Todas as Campanhas
  **Método**: GET
 **URL**:  /api/campanha
 Resposta Esperada:
-
- 
- 
- 
+```
   {
     "cpf": "12345678901",
     "campanha": "15% de desconto nas próximas compras"
@@ -181,28 +178,24 @@ Resposta Esperada:
     "cpf": "10987654321",
     "campanha": "10% de desconto em produtos selecionados"
   }
- 
+``` 
 ## 2. Cliente Routes
-Cadastrar Cliente
+### Cadastrar Cliente
  **Método**: POST
 **URL**:  /api/clientes
 **Exemplo de Requisição**:
-
- 
- 
+```
 {
   "nome": "João da Silva",
   "cpf": 12345678901,
   "email": "jsilva@gmail.com"
 }
-Listar Todos os Clientes
+```
+### Listar Todos os Clientes
  **Método**: GET
 **URL**:  /api/clientes
 Resposta Esperada:
 
- 
- 
- 
   {
     "id": "1",
     "nome": "João da Silva",
@@ -217,14 +210,11 @@ Resposta Esperada:
   }
  
 ## 3. Pagamento Routes
-Consultar Pagamentos
+### Consultar Pagamentos
  **Método**: GET
 **URL**:  /api/consultapagamentos
 Resposta Esperada:
 
- 
- 
- 
   {
     "id": "12345",
     "cpf": "12345678901",
@@ -236,32 +226,24 @@ Resposta Esperada:
     "status": "Pendente"
   }
  
-Confirmar Pedido de Pagamento
+### Confirmar Pedido de Pagamento
  **Método**: POST
 **URL**:  /api/pedidoconfirmacaopagamento/{cpf}
-Exemplo de **URL**:  /api/pedidoconfirmacaopagamento/12345678901
+**Exemplo de URL**:  /api/pedidoconfirmacaopagamento/12345678901
 **Exemplo de Requisição**:
-
- 
- 
 {
   "cpf": "12345678901",
   "status": "Confirmado"
 }
 Resposta Esperada:
 
- 
- 
 {
   "message": "Pedido cadastrado com sucesso"
 }
-Receber Notificações de Pagamento do Mercado Pago
+### Receber Notificações de Pagamento do Mercado Pago
  **Método**: POST
 **URL**:  /api/webhook/mercadopago
 **Exemplo de Requisição**:
-
- 
- 
 {
   "id": "1234567890",
   "status": "approved",
@@ -272,25 +254,21 @@ Resposta Esperada:
 text
  
 Notificação recebida com sucesso
-Gerar QR Code para Pagamento
+### Gerar QR Code para Pagamento
  **Método**: POST
 **URL**:  /api/generate-qr-code
 **Exemplo de Requisição**:
 
- 
- 
 {
   "amount": 100.00
 }
 Resposta Esperada:
-
- 
  
 {
   "qr_code_url": "https://example.com/qrcode.png"
 }
 ## 4. Pedido Routes
-Cadastrar Pedido
+### Cadastrar Pedido
  **Método**: POST
 **URL**:  /api/pedido
 **Exemplo de Requisição**:
@@ -320,7 +298,7 @@ Resposta Esperada:
   "statuspagamento": "Não confirmado",
   "ondecomer": "Viagem"
 }
-Listar Todos os Pedidos
+### Listar Todos os Pedidos
  **Método**: GET
 **URL**:  /api/pedido
 Resposta Esperada:
@@ -339,7 +317,7 @@ Resposta Esperada:
     "ondecomer": "Viagem"
   }
  
-Acompanhamento do Pedido por CPF
+### Acompanhamento do Pedido por CPF
  **Método**: GET
 **URL**:  /api/pedidos/{cpf}
 **Exemplo de URL**:  /api/pedidos/12345678901
@@ -357,7 +335,7 @@ Resposta Esperada:
   "statuspagamento": "Não confirmado",
   "ondecomer": "Viagem"
 }
-Listar Pedidos Não Finalizados
+### Listar Pedidos Não Finalizados
  **Método**: GET
 **URL**:  /api/pedidosnaofinalizados
 Resposta Esperada:
@@ -376,9 +354,9 @@ Resposta Esperada:
     "ondecomer": "Viagem"
   }
  
-5. Produto Routes
-Inserir Produto
- **Método**: POST
+## 5. Produto Routes
+### Inserir Produto
+**Método**: POST
 **URL**:  /api/produtos
 **Exemplo de Requisição**:
 
@@ -398,10 +376,10 @@ Resposta Esperada:
 {
   "message": "Produto inserido com sucesso"
 }
-Alterar Produto
+### Alterar Produto
  **Método**: PUT
 **URL**:  /api/produtos/{codigo}
-Exemplo de **URL**:  /api/produtos/1
+**Exemplo de URL**:  /api/produtos/1
 **Exemplo de Requisição**:
 
  
@@ -419,7 +397,7 @@ Resposta Esperada:
 {
   "message": "Produto alterado com sucesso"
 }
-Deletar Produto
+### Deletar Produto
 **Método**: DELETE
 **URL**:  /api/produtos/{codigo}
 **Exemplo de URL**:  /api/produtos/1
@@ -430,7 +408,7 @@ Resposta Esperada:
 {
   "message": "Produto deletado com sucesso"
 }
-Listar Produtos por Categoria
+### Listar Produtos por Categoria
 **Método**: GET
 **URL**:  /api/produtos/categoria/{categoria}
 **Exemplo de URL**:  /api/produtos/categoria/lanche
@@ -443,8 +421,8 @@ Resposta Esperada:
     "descricao": "Pão, hamburguer e queijo",
     "preco": 15
   }
-Listar Produtos
- **Método**: GET
+### Listar Produtos
+**Método**: GET
 **URL**:  /api/produtos
 Resposta Esperada:
   {
