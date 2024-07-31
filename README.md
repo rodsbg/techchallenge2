@@ -8,6 +8,9 @@ Rm349615 - Alexandre Montesino da Costa Campos <br />
 Rm349612 - Ricardo Amaral Jara <br />
 Rm350424 - Rodrigo Barboza Gonçalves
 
+## Vídeo You tube demonstrando a infraestrutura na cloud
+
+
 ## Pre-requisitos
 
 1 - docker <br />
